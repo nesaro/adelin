@@ -1,0 +1,105 @@
+Only in boxbackup-0.11.1: boxbackup-0.11rc2
+Only in boxbackup-0.11.1: install-sh
+diff -crB -x config.log -x '*.status' -x '*.mpi' boxbackup-0.11.1.orig//lib/common/BoxPlatform.h boxbackup-0.11.1/lib/common/BoxPlatform.h
+*** boxbackup-0.11.1.orig//lib/common/BoxPlatform.h	2011-01-08 21:35:20.000000000 +0000
+--- boxbackup-0.11.1/lib/common/BoxPlatform.h	2012-02-14 16:02:51.291717220 +0000
+***************
+*** 118,127 ****
+  #endif
+  
+  // Disable memory testing under Darwin, it just doesn't like it very much.
+! #ifdef __APPLE__
+  	// TODO: We really should get some decent leak detection code.
+  	#define PLATFORM_DISABLE_MEM_LEAK_TESTING
+! #endif
+  
+  // Darwin also has a weird idea of permissions and dates on symlinks:
+  // perms are fixed at creation time by your umask, and dates can't be
+--- 118,127 ----
+  #endif
+  
+  // Disable memory testing under Darwin, it just doesn't like it very much.
+! //#ifdef __APPLE__
+  	// TODO: We really should get some decent leak detection code.
+  	#define PLATFORM_DISABLE_MEM_LEAK_TESTING
+! //#endif
+  
+  // Darwin also has a weird idea of permissions and dates on symlinks:
+  // perms are fixed at creation time by your umask, and dates can't be
+diff -crB -x config.log -x '*.status' -x '*.mpi' boxbackup-0.11.1.orig//lib/common/Configuration.h boxbackup-0.11.1/lib/common/Configuration.h
+*** boxbackup-0.11.1.orig//lib/common/Configuration.h	2011-01-08 21:35:20.000000000 +0000
+--- boxbackup-0.11.1/lib/common/Configuration.h	2012-02-14 15:45:54.939754304 +0000
+***************
+*** 75,80 ****
+--- 75,81 ----
+  #include <vector>
+  #include <string>
+  #include <memory>
++ #include <stdint.h>
+  
+  // For defining tests
+  enum
+***************
+*** 189,202 ****
+  	{
+  		return Verify(rVerify, std::string(), rErrorMsg);
+  	}
+  
+  private:	
+  	std::string mName;
+  	// Order of keys not preserved
+  	std::map<std::string, std::string> mKeys;
+  	// Order of sub blocks preserved
+- 	typedef std::list<std::pair<std::string, Configuration> > SubConfigListType;
+- 	SubConfigListType mSubConfigurations;
+  	
+  	static bool LoadInto(Configuration &rConfig, FdGetLine &rGetLine, std::string &rErrorMsg, bool RootLevel);
+  	bool Verify(const ConfigurationVerify &rVerify, const std::string &rLevel,
+--- 190,203 ----
+  	{
+  		return Verify(rVerify, std::string(), rErrorMsg);
+  	}
++ 	typedef std::list<std::pair<std::string, Configuration> > SubConfigListType;
++ 	SubConfigListType mSubConfigurations;
+  
+  private:	
+  	std::string mName;
+  	// Order of keys not preserved
+  	std::map<std::string, std::string> mKeys;
+  	// Order of sub blocks preserved
+  	
+  	static bool LoadInto(Configuration &rConfig, FdGetLine &rGetLine, std::string &rErrorMsg, bool RootLevel);
+  	bool Verify(const ConfigurationVerify &rVerify, const std::string &rLevel,
+diff -crB -x config.log -x '*.status' -x '*.mpi' boxbackup-0.11.1.orig//lib/common/Utils.cpp boxbackup-0.11.1/lib/common/Utils.cpp
+*** boxbackup-0.11.1.orig//lib/common/Utils.cpp	2011-01-08 21:35:21.000000000 +0000
+--- boxbackup-0.11.1/lib/common/Utils.cpp	2012-02-14 15:52:07.547740710 +0000
+***************
+*** 92,98 ****
+  
+  std::string GetBoxBackupVersion()
+  {
+! 	return BOX_VERSION;
+  }
+  
+  // --------------------------------------------------------------------------
+--- 92,98 ----
+  
+  std::string GetBoxBackupVersion()
+  {
+! 	return "0.11.1";
+  }
+  
+  // --------------------------------------------------------------------------
+diff -crB -x config.log -x '*.status' -x '*.mpi' boxbackup-0.11.1.orig//lib/common/Utils.h boxbackup-0.11.1/lib/common/Utils.h
+*** boxbackup-0.11.1.orig//lib/common/Utils.h	2011-01-08 21:35:21.000000000 +0000
+--- boxbackup-0.11.1/lib/common/Utils.h	2012-02-14 15:45:08.679755992 +0000
+***************
+*** 72,77 ****
+--- 72,78 ----
+  
+  #include <string>
+  #include <vector>
++ #include <stdint.h>
+  
+  #include "MemLeakFindOn.h"
+  

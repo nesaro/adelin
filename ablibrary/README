@@ -17,6 +17,9 @@ See COPYING for more information
 INSTALLATION
 ============
 
-ablibrary includes boxbackup source code. You need to download, configure and build the lastest version of boxbackup inside ablibrary directory. Some problems may happen:
+ablibrary includes boxbackup source code. You need to download, configure and build the lastest version of boxbackup inside ablibrary directory. 
+This package include diff files for patching boxbackup source code  
+
+In case you need to modify boxbackup source code: 
  * u_int32t problems: #include <stdints.h>
 
