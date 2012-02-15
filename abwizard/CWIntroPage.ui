@@ -1,0 +1,27 @@
+<ui version="4.0" >
+ <class>CWIntroPage</class>
+ <widget class="QWidget" name="CWIntroPage" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" >
+   <item>
+    <widget class="QCheckBox" name="checkBox" >
+     <property name="text" >
+      <string>Do you have a Adelin Backup account?</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,27 @@
+<ui version="4.0" >
+ <class>CWIsNewUserPage</class>
+ <widget class="QWidget" name="CWIsNewUserPage" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>586</width>
+    <height>329</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <item>
+    <widget class="QCheckBox" name="checkBox" >
+     <property name="text" >
+      <string>¿Ya ha hecho una instalación previa de Adelin Backup y quiere mantener sus claves?</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
