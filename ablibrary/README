@@ -1,0 +1,22 @@
+Description
+===========
+
+This is a set of function and classes which interfaces boxbackup configuration and programs
+It uses the same application name than every adelinbackup component
+
+Author 
+======
+
+Boxbackup was written and is copyright (C) 2003-2008 Ben  Summers
+AdelinBackup was written by Néstor Arocha Rodríguez and is copyright(c) 2008-2009 Adelin Software
+
+Copyright
+=========
+See COPYING for more information
+
+INSTALLATION
+============
+
+ablibrary includes boxbackup source code. You need to download, configure and build the lastest version of boxbackup inside ablibrary directory. Some problems may happen:
+ * u_int32t problems: #include <stdints.h>
+
