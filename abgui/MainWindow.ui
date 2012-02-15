@@ -1,0 +1,133 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>476</height>
+   </rect>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>300</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Adelin Backup</string>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <layout class="QHBoxLayout" >
+    <item>
+     <widget class="QTabWidget" name="tabWidget" >
+      <property name="layoutDirection" >
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="currentIndex" >
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab_1" >
+       <attribute name="title" >
+        <string/>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_3" >
+       <attribute name="title" >
+        <string/>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" >
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget" >
+        <widget class="QWidget" name="page" />
+        <widget class="QWidget" name="page_2" />
+       </widget>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget_2" >
+        <property name="currentIndex" >
+         <number>1</number>
+        </property>
+        <widget class="QWidget" name="page_3" />
+        <widget class="QWidget" name="page_4" />
+       </widget>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget_3" >
+        <widget class="QWidget" name="page_5" />
+        <widget class="QWidget" name="page_6" />
+       </widget>
+      </item>
+      <item>
+       <widget class="QStackedWidget" name="stackedWidget_4" >
+        <widget class="QWidget" name="page_7" />
+        <widget class="QWidget" name="page_8" />
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>300</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuBOS" >
+    <property name="title" >
+     <string>AB</string>
+    </property>
+    <widget class="QMenu" name="menuConfigure" >
+     <property name="title" >
+      <string>Configure</string>
+     </property>
+     <addaction name="actionConfiguraci_n_del_Backup" />
+     <addaction name="actionConfiguraci_n_de_las_rutas" />
+    </widget>
+    <addaction name="menuConfigure" />
+    <addaction name="separator" />
+    <addaction name="actionQuit" />
+   </widget>
+   <widget class="QMenu" name="menuAbout" >
+    <property name="title" >
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout" />
+   </widget>
+   <addaction name="menuBOS" />
+   <addaction name="menuAbout" />
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+  <action name="actionQuit" >
+   <property name="text" >
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionAbout" >
+   <property name="text" >
+    <string>About Adelin Backup</string>
+   </property>
+  </action>
+  <action name="actionConfiguraci_n_del_Backup" >
+   <property name="text" >
+    <string>Client Configuration</string>
+   </property>
+  </action>
+  <action name="actionConfiguraci_n_de_las_rutas" >
+   <property name="text" >
+    <string>Paths Configuration</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
