@@ -1,0 +1,9 @@
+*.o
+.svn
+moc_*.cpp
+qrc_*.cpp
+ui_*.h
+*/Makefile
+abgui/abgui
+ablibrary/*.so*
+abtray/abtray
